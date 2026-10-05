@@ -1,0 +1,12 @@
+services:
+  notebook:
+    build: .
+    ports:
+      - "127.0.0.1:8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    working_dir: /home/jovyan/work
+    command:
+      - start-notebook.py
+      - --ServerApp.root_dir=/home/jovyan/work
+      - --IdentityProvider.token=
